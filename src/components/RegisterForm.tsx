@@ -21,21 +21,23 @@ export default function RegisterForm() {
     "واردکننده",
     "صادرکننده",
     "تولیدی پوشاک",
-    "خیاط ",
-    "رنگرز ",
-    "نخ فروش ",
-    "تولید کننده نخ ",    
-    "طراح ",
+    "خیاط",
+    "رنگرز",
+    "نخ فروش",
+    "تولید کننده نخ",
+    "طراح",
     "آموزشگاه خیاطی",
     "فروشگاه آنلاین",
-    "دیگر ",
+    "دیگر",
   ];
 
   const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,27 +59,28 @@ export default function RegisterForm() {
       className="w-full max-w-md bg-white p-6 rounded-xl shadow-md space-y-4"
     >
       <input
-  type="text"
-  name="fullName"
-  placeholder="نام کامل"
-  className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
-/>
+        type="text"
+        name="full_name"
+        value={formData.full_name}
+        onChange={handleChange}
+        placeholder="نام کامل"
+        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
       />
       <input
         name="email"
         type="email"
-        placeholder="ایمیل"
         value={formData.email}
         onChange={handleChange}
+        placeholder="ایمیل"
         className="w-full p-2 border rounded"
         required
       />
       <input
         name="phone"
         type="tel"
-        placeholder="شماره موبایل"
         value={formData.phone}
         onChange={handleChange}
+        placeholder="شماره موبایل"
         className="w-full p-2 border rounded"
         required
       />
@@ -98,17 +101,19 @@ export default function RegisterForm() {
       <input
         name="city"
         type="text"
-        placeholder="شهر / استان"
         value={formData.city}
         onChange={handleChange}
+        placeholder="شهر / استان"
         className="w-full p-2 border rounded"
       />
       <textarea
-  name="description"
-  placeholder="توضیح کوتاه درباره شما (اختیاری)"
-  className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
-  rows={3}
-/>
+        name="description"
+        value={formData.description}
+        onChange={handleChange}
+        placeholder="توضیح کوتاه درباره شما (اختیاری)"
+        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
+        rows={3}
+      />
       <button
         type="submit"
         className="bg-green-600 text-white p-2 rounded w-full"
