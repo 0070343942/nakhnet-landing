@@ -24,10 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa">
-      <head>
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" rel="stylesheet" />
-      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
