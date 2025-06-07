@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-grow flex flex-col items-center justify-center px-4">
-        <h1 className="text-4xl font-bold text-center mb-4 lalezar-font">
+        <h1 className="text-4xl font-bold text-center mb-4 lalezar-font text-black">
           کسب‌وکارت رو نخ کن
         </h1>
 
@@ -15,8 +15,8 @@ export default function Home() {
         <RegisterForm />
       </main>
 
-      <footer className="text-center text-sm text-gray-500 py-4 border-t vazir-font">
-        © {new Date().getFullYear()} . تمامی حقوق متعلق به پلتفرم نخ‌نت است.
+      <footer className="text-center text-sm text-gray-600 py-4 border-t vazir-font">
+        © {new Date().getFullYear()} تمامی حقوق متعلق به پلتفرم نخ‌نت است.
       </footer>
     </div>
   );
