@@ -1,3 +1,16 @@
+import Head from 'next/head';
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fa">
+      <Head>
+        <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
+        <link href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" rel="stylesheet" />
+      </Head>
+      <body>{children}</body>
+    </html>
+  );
+}
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
