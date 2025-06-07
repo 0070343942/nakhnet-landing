@@ -31,7 +31,9 @@ export default function RegisterForm() {
     "دیگر ",
   ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
