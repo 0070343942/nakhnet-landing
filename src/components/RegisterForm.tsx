@@ -35,7 +35,7 @@ export default function RegisterForm() {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitted:", formData);
     setMessage("اطلاعات با موفقیت ثبت شد.");
