@@ -1,3 +1,9 @@
+@import url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css');
+
+.lalezar-font {
+  font-family: 'Lalezar', sans-serif !important;
+}
+
 @import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
 @import url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css');
 @import "tailwindcss";
