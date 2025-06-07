@@ -57,13 +57,11 @@ export default function RegisterForm() {
       className="w-full max-w-md bg-white p-6 rounded-xl shadow-md space-y-4"
     >
       <input
-        name="full_name"
-        type="text"
-        placeholder="نام کامل"
-        value={formData.full_name}
-        onChange={handleChange}
-        className="w-full p-2 border rounded"
-        required
+  type="text"
+  name="fullName"
+  placeholder="نام کامل"
+  className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
+/>
       />
       <input
         name="email"
@@ -106,13 +104,11 @@ export default function RegisterForm() {
         className="w-full p-2 border rounded"
       />
       <textarea
-        name="description"
-        placeholder="توضیح کوتاه درباره شما (اختیاری)"
-        value={formData.description}
-        onChange={handleChange}
-        className="w-full p-2 border rounded"
-        rows={3}
-      />
+  name="description"
+  placeholder="توضیح کوتاه درباره شما (اختیاری)"
+  className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
+  rows={3}
+/>
       <button
         type="submit"
         className="bg-green-600 text-white p-2 rounded w-full"
