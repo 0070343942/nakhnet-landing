@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "نخ‌نت | کسب‌وکارت رو نخ کن",
   description: "اگر نخ از تولید تا پوشاک سیستمی منظم و هوشمند داشته باشه، غوغا میشه.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -27,11 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa">
-      <head>
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" rel="stylesheet" />
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
