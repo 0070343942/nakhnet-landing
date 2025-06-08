@@ -1,17 +1,19 @@
-@import url("https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css");
-@import url("https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  direction: rtl;
+}
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Vazir", sans-serif;
-  background-color: #f9fafb;
+  font-family: 'Vazir', sans-serif;
 }
 
 .vazir-font {
-  font-family: "Vazir", sans-serif;
+  font-family: 'Vazir', sans-serif;
 }
 
 .lalezar-font {
-  font-family: "Lalezar", cursive;
+  font-family: 'Lalezar', cursive;
 }
