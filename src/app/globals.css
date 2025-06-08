@@ -7,8 +7,9 @@
 @import url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css');
 
 .vazir-font {
-  font-family: Vazir, sans-serif;
+  font-family: 'Vazir', sans-serif;
 }
+
 .lalezar-font {
-  font-family: Lalezar, cursive;
+  font-family: 'Lalezar', cursive;
 }

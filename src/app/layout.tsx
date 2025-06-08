@@ -12,12 +12,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa">
+    <html lang="fa" dir="rtl">
       <head>
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
-        <link href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" rel="stylesheet" />
+        <link
+          href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css"
+          rel="stylesheet"
+        />
       </head>
-      <body className="vazir-font bg-gray-100 text-gray-900">{children}</body>
+      <body className="vazir-font bg-gray-50 text-black">
+        {children}
+      </body>
     </html>
   );
 }
