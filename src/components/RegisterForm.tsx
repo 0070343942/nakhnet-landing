@@ -1,13 +1,14 @@
 "use client";
+
 import { useState } from "react";
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     mobile: "",
     role: "",
-    location: "",
+    city: "",
     description: "",
   });
 
@@ -21,9 +22,7 @@ export default function RegisterForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitted:", formData);
     setMessage("اطلاعات با موفقیت ثبت شد.");
@@ -32,69 +31,79 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md bg-white p-6 rounded shadow-md space-y-4 vazir-font"
+      className="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
     >
       <input
+        className="w-full p-2 border rounded mb-4 vazir-font"
         type="text"
-        name="fullName"
+        name="name"
         placeholder="نام کامل"
-        value={formData.fullName}
+        value={formData.name}
         onChange={handleChange}
-        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
       />
+
       <input
+        className="w-full p-2 border rounded mb-4 vazir-font"
         type="email"
         name="email"
         placeholder="ایمیل"
         value={formData.email}
         onChange={handleChange}
-        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
       />
+
       <input
-        type="tel"
+        className="w-full p-2 border rounded mb-4 vazir-font"
+        type="text"
         name="mobile"
         placeholder="شماره موبایل"
         value={formData.mobile}
         onChange={handleChange}
-        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
       />
+
       <select
+        className="w-full p-2 border rounded mb-4 vazir-font"
         name="role"
         value={formData.role}
         onChange={handleChange}
-        className="w-full p-2 border rounded bg-white text-black"
       >
         <option value="">انتخاب نقش</option>
-        <option value="store">فروشگاه پارچه</option>
-        <option value="decor">خرازی / تزئینات</option>
-        <option value="tailor">خیاط / مزون</option>
-        <option value="exporter">صادرکننده / واردکننده</option>
+        <option value="پارچه‌فروش">پارچه‌فروش</option>
+        <option value="مزون‌دار">مزون‌دار</option>
+        <option value="خیاط خانگی">خیاط خانگی</option>
+        <option value="فروشگاه تزیینات">فروشگاه تزیینات</option>
+        <option value="گل‌دوز و کار سنگ‌دوزی">گل‌دوز / کار سنگ‌دوزی</option>
+        <option value="آموزشگاه خیاطی">آموزشگاه خیاطی</option>
+        <option value="واردکننده/صادرکننده">واردکننده / صادرکننده</option>
+        <option value="علاقه‌مند به یادگیری">علاقه‌مند به یادگیری</option>
       </select>
+
       <input
+        className="w-full p-2 border rounded mb-4 vazir-font"
         type="text"
-        name="location"
+        name="city"
         placeholder="شهر / استان"
-        value={formData.location}
+        value={formData.city}
         onChange={handleChange}
-        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
       />
+
       <textarea
+        className="w-full p-2 border rounded mb-4 vazir-font"
         name="description"
         placeholder="توضیح کوتاه درباره شما (اختیاری)"
+        rows={3}
         value={formData.description}
         onChange={handleChange}
-        rows={3}
-        className="w-full p-2 border rounded bg-white text-black placeholder-gray-500"
-      />
+      ></textarea>
+
       <button
         type="submit"
-        className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
+        className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
       >
         ثبت‌نام
       </button>
 
       {message && (
-        <p className="text-center text-green-700 text-sm">{message}</p>
+        <p className="text-green-600 mt-4 text-center vazir-font">{message}</p>
       )}
     </form>
   );
