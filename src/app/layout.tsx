@@ -12,13 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa">
-      <head>
-        <link rel="preconnect" href="https://cdn.fontcdn.ir" />
-        <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" />
-        <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" />
-      </head>
-      <body style={{ fontFamily: "Vazir, sans-serif" }}>
+    <html lang="fa" dir="rtl">
+      <body className="vazir-font">
         {children}
       </body>
     </html>
