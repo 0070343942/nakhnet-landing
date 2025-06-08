@@ -1,16 +1,5 @@
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "نخ‌نت | کسب‌وکارت رو نخ کن",
@@ -24,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://cdn.fontcdn.ir" />
+        <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" />
+        <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css" />
+      </head>
+      <body style={{ fontFamily: "Vazir, sans-serif" }}>
         {children}
       </body>
     </html>

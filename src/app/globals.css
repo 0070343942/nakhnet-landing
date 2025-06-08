@@ -11,3 +11,10 @@ body {
 .lalezar-font {
   font-family: 'Lalezar', cursive !important;
 }
+.vazir-font {
+  font-family: "Vazir", sans-serif;
+}
+
+.lalezar-font {
+  font-family: "Lalezar", cursive;
+}
