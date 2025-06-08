@@ -1,0 +1,16 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت‌های فارسی */
+@import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+@import url('https://cdn.fontcdn.ir/Font/Persian/Lalezar/Lalezar.css');
+
+.vazir-font {
+  font-family: 'Vazir', sans-serif;
+}
+
+.lalezar-font {
+  font-family: 'Lalezar', cursive;
+}
