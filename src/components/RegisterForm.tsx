@@ -15,56 +15,52 @@ export default function RegisterForm() {
   const [message, setMessage] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitted:", formData);
-    setMessage("اطلاعات با موفقیت ثبت شد.");
+    setMessage("اطلاعات با موفقیت ثبت شد ✅");
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="w-full max-w-xl bg-white rounded-lg shadow-lg p-8 space-y-4 border border-gray-200"
     >
       <input
-        className="w-full p-2 border rounded mb-4 vazir-font"
-        type="text"
         name="name"
         placeholder="نام کامل"
         value={formData.name}
         onChange={handleChange}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font"
       />
 
       <input
-        className="w-full p-2 border rounded mb-4 vazir-font"
-        type="email"
         name="email"
+        type="email"
         placeholder="ایمیل"
         value={formData.email}
         onChange={handleChange}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font"
       />
 
       <input
-        className="w-full p-2 border rounded mb-4 vazir-font"
-        type="text"
         name="mobile"
         placeholder="شماره موبایل"
         value={formData.mobile}
         onChange={handleChange}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font"
       />
 
       <select
-        className="w-full p-2 border rounded mb-4 vazir-font"
         name="role"
         value={formData.role}
         onChange={handleChange}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font bg-white"
       >
         <option value="">انتخاب نقش</option>
         <option value="پارچه‌فروش">پارچه‌فروش</option>
@@ -78,32 +74,31 @@ export default function RegisterForm() {
       </select>
 
       <input
-        className="w-full p-2 border rounded mb-4 vazir-font"
-        type="text"
         name="city"
         placeholder="شهر / استان"
         value={formData.city}
         onChange={handleChange}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font"
       />
 
       <textarea
-        className="w-full p-2 border rounded mb-4 vazir-font"
         name="description"
         placeholder="توضیح کوتاه درباره شما (اختیاری)"
-        rows={3}
         value={formData.description}
         onChange={handleChange}
-      ></textarea>
+        rows={3}
+        className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 vazir-font"
+      />
 
       <button
         type="submit"
-        className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-200 vazir-font"
       >
         ثبت‌نام
       </button>
 
       {message && (
-        <p className="text-green-600 mt-4 text-center vazir-font">{message}</p>
+        <p className="text-green-600 text-center mt-4 vazir-font">{message}</p>
       )}
     </form>
   );
