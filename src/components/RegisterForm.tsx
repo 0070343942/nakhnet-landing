@@ -29,7 +29,8 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8 space-y-4 border border-gray-200 mt-8"
+      className="className="w-full max-w-md mx-auto ..."
+ bg-white rounded-lg shadow-lg p-6 md:p-8 space-y-4 border border-gray-200 mt-8"
     >
       <h2 className="text-xl font-bold text-center lalezar-font mb-4">فرم ثبت‌نام نخ‌نت</h2>
 
