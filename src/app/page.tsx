@@ -3,7 +3,7 @@ import RegisterForm from "@/components/RegisterForm";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen px-4 pt-10 pb-6 bg-gray-50">
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 py-10 space-y-6">
       <h1 className="text-3xl font-bold lalezar-font text-center mb-2">
         کسب‌وکارت رو نخ کن
       </h1>
