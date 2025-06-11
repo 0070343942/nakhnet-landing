@@ -27,14 +27,12 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="px-4 flex justify-center">
+    <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
       <form
         onSubmit={handleSubmit}
-        className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 space-y-4 border border-gray-300"
+        className="w-full max-w-md bg-white rounded-lg shadow-md p-6 space-y-4 border border-gray-300"
       >
-        <h2 className="text-xl font-bold text-center lalezar-font">
-          فرم ثبت‌نام نخ‌نت
-        </h2>
+        <h2 className="text-xl font-bold text-center lalezar-font">فرم ثبت‌نام نخ‌نت</h2>
 
         <input
           name="name"
@@ -103,15 +101,13 @@ export default function RegisterForm() {
 
         <button
           type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md transition duration-200 vazir-font"
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-md transition duration-200 vazir-font"
         >
           ثبت‌نام
         </button>
 
         {message && (
-          <p className="text-green-600 text-center mt-4 vazir-font">
-            {message}
-          </p>
+          <p className="text-green-600 text-center mt-4 vazir-font">{message}</p>
         )}
       </form>
     </div>
