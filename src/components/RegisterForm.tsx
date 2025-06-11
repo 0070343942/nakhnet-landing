@@ -27,10 +27,10 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="w-full flex justify-center px-4 sm:px-6 md:px-8">
+    <div className="px-4 flex justify-center">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 space-y-4 border border-gray-300"
+        className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 space-y-4 border border-gray-300"
       >
         <h2 className="text-xl font-bold text-center lalezar-font">
           فرم ثبت‌نام نخ‌نت
