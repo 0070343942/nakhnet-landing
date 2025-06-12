@@ -18,7 +18,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: 'اطلاعات با موفقیت ذخیره شد ✅' }, { status: 200 })
   } catch (error) {
-    console.error('❌ خطا در route.ts:', error)
-    return NextResponse.json({ message: 'خطا در ذخیره‌سازی اطلاعات ❌' }, { status: 500 })
+    return NextResponse.json({ message: 'خطا در ذخیره‌سازی اطلاعات ❌', error: String(error) }, { status: 500 })
   }
 }
