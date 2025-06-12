@@ -10,14 +10,24 @@ export async function POST(req: Request) {
   try {
     const body = await req.json()
 
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('registrations')
       .insert([body])
 
-    if (error) throw error
+    if (error) {
+      console.error('SUPABASE ERROR:', error.message)
+      return NextResponse.json(
+        { message: 'خطا در ذخیره‌سازی اطلاعات ❌', details: error.message },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({ message: 'اطلاعات با موفقیت ذخیره شد ✅' }, { status: 200 })
-  } catch (error) {
-    return NextResponse.json({ message: 'خطا در ذخیره‌سازی اطلاعات ❌', error: String(error) }, { status: 500 })
+  } catch (err: any) {
+    console.error('CATCH ERROR:', err.message)
+    return NextResponse.json(
+      { message: 'خطای سیستمی ❌', details: err.message },
+      { status: 500 }
+    )
   }
 }
