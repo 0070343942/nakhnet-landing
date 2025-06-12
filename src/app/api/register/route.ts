@@ -1,20 +1,8 @@
-import { NextResponse } from 'next/server';
-import supabase from "@/lib/supabaseClient";
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.json();
+  const body = await req.json()
+  console.log('داده دریافت شد:', body)
 
-        if (error) throw error;
-
-    return NextResponse.json(
-      { message: 'اطلاعات با موفقیت ذخیره شد ✅' },
-      { status: 200 }
-    );
-  } catch (error) {
-    return NextResponse.json(
-      { message: 'خطا در ذخیره‌سازی اطلاعات ❌', error: String(error) },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ message: 'دریافت شد ✅' })
 }
