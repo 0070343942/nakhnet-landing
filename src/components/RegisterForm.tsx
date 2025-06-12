@@ -46,10 +46,8 @@ export default function RegisterForm() {
       } else {
         setMessage(result.message || "خطا در ارسال اطلاعات ❌");
       }
-    } catch (error) {
-      setMessage("مشکلی در ارتباط با سرور پیش آمد ❌");
-    }
-  };
+    
+    };
 
   return (
     <div className="w-full flex justify-center px-4 sm:px-6 lg:px-24">
