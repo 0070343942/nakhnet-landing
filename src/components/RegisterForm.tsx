@@ -20,7 +20,7 @@ export default function RegisterForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   try {
     const res = await fetch("/api/register", {
@@ -35,6 +35,14 @@ export default function RegisterForm() {
 
     if (res.ok) {
       setMessage(result.message || "اطلاعات با موفقیت ثبت شد ✅");
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        role: "",
+        city: "",
+        description: "",
+      });
     } else {
       setMessage(result.message || "خطا در ارسال اطلاعات ❌");
     }
