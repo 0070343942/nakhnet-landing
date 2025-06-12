@@ -20,34 +20,37 @@ export default function RegisterForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  try {
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      setMessage(result.message || "اطلاعات با موفقیت ثبت شد ✅");
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        role: "",
+        city: "",
+        description: "",
       });
+    } else {
+      setMessage(result.message || "خطا در ارسال اطلاعات ❌");
+    }
+  } catch {
+    setMessage("مشکلی در ارتباط با سرور پیش آمد ❌");
+  }
+};
 
-      const result = await res.json();
-
-      if (res.ok) {
-        setMessage(result.message || "اطلاعات با موفقیت ثبت شد ✅");
-        setFormData({
-          name: "",
-          email: "",
-          mobile: "",
-          role: "",
-          city: "",
-          description: "",
-        });
-      } else {
-        setMessage(result.message || "خطا در ارسال اطلاعات ❌");
-      }
-    
-    };
 
   return (
     <div className="w-full flex justify-center px-4 sm:px-6 lg:px-24">
