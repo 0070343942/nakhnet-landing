@@ -25,7 +25,9 @@ export default function RegisterForm() {
   try {
     const res = await fetch("/api/register", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
 
@@ -33,14 +35,6 @@ export default function RegisterForm() {
 
     if (res.ok) {
       setMessage(result.message || "اطلاعات با موفقیت ثبت شد ✅");
-      setFormData({
-        name: "",
-        email: "",
-        mobile: "",
-        role: "",
-        city: "",
-        description: "",
-      });
     } else {
       setMessage(result.message || "خطا در ارسال اطلاعات ❌");
     }
@@ -48,6 +42,7 @@ export default function RegisterForm() {
     setMessage("مشکلی در ارتباط با سرور پیش آمد ❌");
   }
 };
+
 
 
 
