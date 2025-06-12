@@ -25,14 +25,14 @@ export default function RegisterForm() {
   try {
     const res = await fetch("/api/register", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
+    const result = await res.json();
+
     if (res.ok) {
-      setMessage("اطلاعات با موفقیت ثبت و ذخیره شد ✅");
+      setMessage(result.message || "اطلاعات با موفقیت ثبت شد ✅");
       setFormData({
         name: "",
         email: "",
@@ -42,12 +42,13 @@ export default function RegisterForm() {
         description: "",
       });
     } else {
-      setMessage("خطا در ثبت اطلاعات ❌");
+      setMessage(result.message || "خطا در ارسال اطلاعات ❌");
     }
   } catch (error) {
-    setMessage("مشکلی در ارتباط با سرور پیش آمده ❌");
+    setMessage("مشکلی در ارتباط با سرور پیش آمد ❌");
   }
 };
+
 
 
     const result = await res.json();
