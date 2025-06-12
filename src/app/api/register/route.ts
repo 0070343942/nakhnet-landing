@@ -1,8 +1,24 @@
 import { NextResponse } from 'next/server'
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 export async function POST(req: Request) {
-  const body = await req.json()
-  console.log('داده دریافت شد:', body)
+  try {
+    const body = await req.json()
 
-  return NextResponse.json({ message: 'دریافت شد ✅' })
+    const { error } = await supabase
+      .from('registrations')
+      .insert([body])
+
+    if (error) throw error
+
+    return NextResponse.json({ message: 'اطلاعات با موفقیت ذخیره شد ✅' }, { status: 200 })
+  } catch (error) {
+    console.error('❌ خطا در route.ts:', error)
+    return NextResponse.json({ message: 'خطا در ذخیره‌سازی اطلاعات ❌' }, { status: 500 })
+  }
 }
