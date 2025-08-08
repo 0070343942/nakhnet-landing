@@ -23,7 +23,7 @@ export default function RegisterForm() {
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   try {
-    const res = await fetch('/api/supabase-register', {
+    const res = await fetch('/api/register', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
